@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMBOT CRM — Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>SAMBOT CRM</h1>
+        <p class="muted">Universal SMB Platform</p>
+        <nav>
+          <button class="nav-item active" data-view="dashboard">Дашборд</button>
+          <button class="nav-item" data-view="customers">Клиенты</button>
+          <button class="nav-item" data-view="pipeline">Воронка</button>
+          <button class="nav-item" data-view="calendar">Календарь</button>
+          <button class="nav-item" data-view="payments">Оплаты</button>
+        </nav>
+        <div class="cta">
+          <p>Демо-режим для инвестора</p>
+          <small>1 core + vertical templates</small>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <h2 id="view-title">Дашборд</h2>
+            <p id="view-subtitle">Операционный контроль бизнеса в реальном времени</p>
+          </div>
+          <div class="topbar-actions">
+            <select id="vertical-select">
+              <option value="repair">Ремонт смартфонов</option>
+              <option value="beauty">Салон красоты</option>
+              <option value="flowers">Цветочный магазин</option>
+              <option value="autoservice">Автосервис</option>
+            </select>
+            <button id="run-demo">Запустить Demo Flow</button>
+          </div>
+        </header>
+
+        <section id="dashboard" class="view active">
+          <div class="kpi-grid" id="kpi-grid"></div>
+          <div class="split">
+            <div class="card">
+              <h3>Последние заявки</h3>
+              <ul id="recent-workitems" class="list"></ul>
+            </div>
+            <div class="card">
+              <h3>Быстрые факты для инвестора</h3>
+              <ul class="facts">
+                <li>TTV &lt; 30 мин</li>
+                <li>Onboarding conversion &gt; 60%</li>
+                <li>D30 retention target &gt; 35%</li>
+                <li>3–5 пилотов в первой вертикали</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="customers" class="view">
+          <div class="card">
+            <h3>Клиенты</h3>
+            <table>
+              <thead>
+                <tr><th>Имя</th><th>Телефон</th><th>Последний визит</th><th>LTV</th></tr>
+              </thead>
+              <tbody id="customers-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="pipeline" class="view">
+          <div class="kanban" id="kanban"></div>
+        </section>
+
+        <section id="calendar" class="view">
+          <div class="card">
+            <h3>Расписание на сегодня</h3>
+            <ul id="calendar-list" class="list"></ul>
+          </div>
+        </section>
+
+        <section id="payments" class="view">
+          <div class="card">
+            <h3>Последние оплаты</h3>
+            <table>
+              <thead>
+                <tr><th>Клиент</th><th>Услуга</th><th>Сумма</th><th>Статус</th></tr>
+              </thead>
+              <tbody id="payments-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div id="toast" class="toast"></div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
